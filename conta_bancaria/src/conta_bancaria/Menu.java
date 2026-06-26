@@ -25,10 +25,10 @@ public class Menu {
 
 		while (true) {
 
-			System.out.println(Cores.TEXT_YELLOW + Cores.ANSI_BLACK_BACKGROUND
+			System.out.println(Cores.TEXT_GREEN + Cores.ANSI_BLACK_BACKGROUND
 					+ "*****************************************************");
 			System.out.println("                                                     ");
-			System.out.println("                BANCO DO BRAZIL COM Z                ");
+			System.out.println("                BANCO PALMEIRAS                   	 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
@@ -57,7 +57,7 @@ public class Menu {
 			}
 
 			if (opcao == 0) {
-				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Brazil com Z - O seu Futuro começa aqui!");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "\nBanco do Palmeiras - A paixão começa aqui!");
 				sobre();
 				leia.close();
 				System.exit(0);
@@ -124,8 +124,8 @@ public class Menu {
 	public static void sobre() {
 		System.out.println("\n*********************************************************");
 		System.out.println("Projeto Desenvolvido por: ");
-		System.out.println("Generation Brasil - generation@generation.org");
-		System.out.println("github.com/conteudoGeneration");
+		System.out.println("Kauê Dota - bancopalmeiras@palmeiras.org");
+		System.out.println("github.com/bancopalmeiras");
 		System.out.println("*********************************************************");
 	}
 
