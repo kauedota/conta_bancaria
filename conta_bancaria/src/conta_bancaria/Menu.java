@@ -193,7 +193,7 @@ public class Menu {
 		int numero = leia.nextInt();
 		leia.nextLine();
 
-		Optional<Conta> conta = contaController.buscarnaCollection(numero);
+		Optional<Conta> conta = contaController.buscarNaCollection(numero);
 
 		if (conta.isPresent()) {
 			System.out.printf("\nTem certeza que você deseja excluir a conta número %d? (S/N)", numero);
@@ -215,7 +215,7 @@ public class Menu {
 		int numero = leia.nextInt();
 		leia.nextLine();
 
-		Optional<Conta> conta = contaController.buscarnaCollection(numero);
+		Optional<Conta> conta = contaController.buscarNaCollection(numero);
 
 		if (conta.isPresent()) {
 
