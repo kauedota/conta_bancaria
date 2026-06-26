@@ -202,7 +202,45 @@ public class Menu {
     }
 
     public static void atualizarConta() {
-        // ... (mantém a lógica de atualização que você já tinha implementado)
+        
+		System.out.println("Digite o número da conta: ");
+		int numero = leia.nextInt();
+		leia.nextLine();
+
+		Optional<Conta> conta = contaController.buscarNaCollection(numero);
+
+		if (conta.isPresent()) {
+			System.out.println("Digite o número da agência: ");
+			int agencia = leia.nextInt();
+
+			System.out.println("Digite o nome do titular da conta: ");
+			leia.skip("\\R?");
+			String titular = leia.nextLine();
+
+			System.out.println("Digite o tipo da conta (1 - CC | 2 - CP): ");
+			int tipo = leia.nextInt();
+
+			System.out.println("Digite o saldo da conta: ");
+			float saldo = leia.nextFloat();
+
+			switch (tipo) {
+			case 1 -> {
+				System.out.println("Digite o limite da conta: ");
+				float limite = leia.nextFloat();
+				leia.nextLine();
+				contaController.atualizar(new ContaCorrente(numero, agencia, tipo, titular, saldo, limite));
+			}
+			case 2 -> {
+				System.out.println("Digite o dia do aniversário da conta: ");
+				int aniversario = leia.nextInt();
+				leia.nextLine();
+				contaController.atualizar(new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario));
+			}
+			default -> System.out.println(Cores.TEXT_RED + "Tipo de conta inválida!" + Cores.TEXT_RESET);
+			}
+		} else {
+			System.out.printf("\nA conta número %d não foi encontrada!", numero);
+		}
     }
 
     public static void sacar() {
